@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Clientes - NexoGest</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Cadastro de Clientes</h1>
+
+  <form action="/clientes" method="POST">
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="text" name="cpf" placeholder="CPF" required>
+    <input type="text" name="telefone" placeholder="Telefone" required>
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <h2>Clientes Cadastrados</h2>
+  <ul>
+    <% clientes.forEach(cliente => { %>
+      <li><strong><%= cliente.nome %></strong> - CPF: <%= cliente.cpf %> - Tel: <%= cliente.telefone %></li>
+    <% }) %>
+  </ul>
+
+  <a href="/painel" class="btn">Voltar ao Painel</a>
+</body>
+</html>
